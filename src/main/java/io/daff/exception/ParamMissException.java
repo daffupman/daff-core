@@ -1,6 +1,6 @@
 package io.daff.exception;
 
-import io.daff.enums.Code;
+import io.daff.enums.Codes;
 
 /**
  * 参数缺失异常
@@ -13,7 +13,7 @@ public class ParamMissException extends BaseException {
     private static final long serialVersionUID = 2253678517658387828L;
 
     public ParamMissException(String message) {
-        super(Code.PARAM_VALIDATE_ERROR, message);
+        super(Codes.PARAM_VALIDATE_ERROR, message);
     }
     
 }

@@ -1,6 +1,6 @@
 package io.daff.exception;
 
-import io.daff.enums.Code;
+import io.daff.enums.Codes;
 
 /**
  * @author daffupman
@@ -11,6 +11,6 @@ public class InsufficientPermissionsException extends BaseException {
     private static final long serialVersionUID = 7103360464347579079L;
 
     public InsufficientPermissionsException(String msg) {
-        super(Code.PERMISSION_NOT_ENOUGH, msg);
+        super(Codes.PERMISSION_NOT_ENOUGH, msg);
     }
 }

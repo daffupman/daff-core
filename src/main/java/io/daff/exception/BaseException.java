@@ -1,7 +1,7 @@
 package io.daff.exception;
 
-import io.daff.enums.Code;
-import io.daff.enums.Message;
+import io.daff.enums.Codes;
+import io.daff.enums.Messages;
 
 /**
  * 系统基础异常
@@ -14,34 +14,34 @@ public class BaseException extends RuntimeException {
     private static final long serialVersionUID = -4113091967574026465L;
 
     /**
-     * 响应码，参考 {@link io.daff.enums.Code}
+     * 响应码，参考 {@link Codes}
      */
-    private Code code;
-    private Message msg;
+    private Codes codes;
+    private Messages msg;
 
-    public BaseException(Code code, Message msg) {
+    public BaseException(Codes codes, Messages msg) {
         super(msg.value());
-        this.code = code;
+        this.codes = codes;
         this.msg = msg;
     }
 
-    public BaseException(Code code, String msg) {
+    public BaseException(Codes codes, String msg) {
         super(msg);
-        this.code = code;
+        this.codes = codes;
     }
 
-    public Code getCode() {
-        return code;
+    public Codes getCodes() {
+        return codes;
     }
 
-    public Message getMsg() {
+    public Messages getMsg() {
         return msg;
     }
 
     @Override
     public String toString() {
         return "BaseException{" +
-                "code=" + code.value() +
+                "code=" + codes.value() +
                 "message=" + getMessage() +
                 '}';
     }

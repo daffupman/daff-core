@@ -1,18 +1,16 @@
 package io.daff.exception;
 
-import io.daff.enums.Code;
+import io.daff.enums.Codes;
 
 /**
- * 不一致的数据
- *
  * @author daffupman
- * @since 2020/7/25
+ * @since 2020/8/9
  */
 public class InconsistentDataException extends BaseException {
 
-    private static final long serialVersionUID = 5088977181620127508L;
+    private static final long serialVersionUID = 7103360464347579079L;
 
     public InconsistentDataException(String msg) {
-        super(Code.INCONSISTENT_DATA, msg);
+        super(Codes.DATA_NOT_MATCH, msg);
     }
 }

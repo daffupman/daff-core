@@ -6,7 +6,7 @@ package io.daff.enums;
  * @author daffupman
  * @since 2020/7/12
  */
-public enum Code {
+public enum Codes {
 
     /**
      * 成功
@@ -59,7 +59,7 @@ public enum Code {
     TOKEN_MISS(5000),
 
     /**
-     * token非法
+     * token错误
      */
     TOKEN_INVALID(5001),
 
@@ -69,9 +69,14 @@ public enum Code {
     DATA_NOT_FOUND(6000),
 
     /**
-     * 数据不一致
+     * 数据状态异常
      */
-    INCONSISTENT_DATA(6001),
+    DATA_STATUS_ERROR(6001),
+
+    /**
+     * 数据不一致：如果帐密不一致，key-secret不一致等
+     */
+    DATA_NOT_MATCH(6002),
 
     /**
      * 验证码不匹配
@@ -92,7 +97,7 @@ public enum Code {
 
     private Integer value;
 
-    Code(Integer value) {
+    Codes(Integer value) {
         this.value = value;
     }
 

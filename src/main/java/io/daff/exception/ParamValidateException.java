@@ -1,6 +1,6 @@
 package io.daff.exception;
 
-import io.daff.enums.Code;
+import io.daff.enums.Codes;
 
 /**
  * 参数校验异常
@@ -13,7 +13,7 @@ public class ParamValidateException extends BaseException {
     private static final long serialVersionUID = 2253678517658387828L;
 
     public ParamValidateException(String message) {
-        super(Code.PARAM_VALIDATE_ERROR, message);
+        super(Codes.PARAM_VALIDATE_ERROR, message);
     }
 
 }
