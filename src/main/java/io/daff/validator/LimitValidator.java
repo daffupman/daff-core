@@ -32,7 +32,7 @@ public class LimitValidator implements ConstraintValidator<Limit, String> {
 
     public void initialize(Limit constraint) {
         // 把定义在注解的值赋值给values变量
-       final String[] values = constraint.values();
+       final String[] values = constraint.value();
        this.allowValues = values.length == 0 ? new ArrayList<>() : Arrays.asList(values);
        this.clazz = constraint.clazz();
     }

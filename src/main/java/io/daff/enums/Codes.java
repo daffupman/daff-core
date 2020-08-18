@@ -34,6 +34,11 @@ public enum Codes {
     PARAM_MISS_ERROR(3001),
 
     /**
+     * 业务错误
+     */
+    BUSINESS_LOGIC_ERROR(3002),
+
+    /**
      * 认证失败
      */
     AUTHENTICATION_FAILED(4000),
@@ -62,6 +67,16 @@ public enum Codes {
      * token错误
      */
     TOKEN_INVALID(5001),
+
+    /**
+     * token已存在
+     */
+    TOKEN_EXIST(5002),
+
+    /**
+     * 重复提交
+     */
+    SUBMIT_AGAIN(5003),
 
     /**
      * 数据找不到

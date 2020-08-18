@@ -21,7 +21,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = LimitValidator.class)
 public @interface Limit {
 
-    String[] values() default {};
+    String[] value() default {};
     String message() default "输入的值不再范围内";
     Class<?> clazz() default String.class;
     Class<?>[] groups() default {};

@@ -73,6 +73,10 @@ public class Response<T> {
         this.data = data;
     }
 
+    public static <T> Response<T> ok() {
+        return new Response<>(Boolean.TRUE, Codes.SUCCESS, Messages.SUCCESS);
+    }
+
     public static <T> Response<T> ok(T data) {
         return new Response<>(Boolean.TRUE, Codes.SUCCESS, Messages.SUCCESS, data);
     }

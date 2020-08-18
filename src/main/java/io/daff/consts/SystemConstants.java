@@ -21,6 +21,19 @@ public class SystemConstants {
 
     public static final String LOGIN_ERROR_RESPONSE = "login_error_response";
 
-    public static final String ACCESS_TOKEN_PREFIX = "access_token";
-    public static final String REFRESH_TOKEN_PREFIX = "refresh_token";
+    public static final String ACCESS_TOKEN_PREFIX = "access_token:";
+    public static final String REFRESH_TOKEN_PREFIX = "refresh_token:";
+
+    /**
+     * 授权码有效时间（min）
+     */
+    public static final Long CODE_EXPIRE_TIME = 10L;
+
+    /**
+     * 存储在redis中的授权码前缀
+     */
+    public static final String AUTHORIZE_CODE_PREFIX = "authorize_code:";
+    public static final String AUTHORIZE_CODE_SCOPE_MAP_PREFIX = "authorize_code_scope_map:";
+
+    public static final String DEFAULT_PASSWORD = "123456";
 }

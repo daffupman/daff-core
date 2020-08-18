@@ -14,6 +14,8 @@ public enum Messages {
 
     PARAM_VALIDATE_ERROR("参数校验异常"),
 
+    PARAM_MISS_ERROR("参数缺失"),
+
     UNEXPECTED_ERROR("意外的异常"),
 
     AUTHENTICATION_FAILED("认证失败"),
