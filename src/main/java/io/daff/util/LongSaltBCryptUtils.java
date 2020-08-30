@@ -390,16 +390,18 @@ public class LongSaltBCryptUtils {
 
         long rounds = roundsForLogRounds(log_rounds);
 
-        init_key();
-        ekskey(salt, password);
-        for (long i = 0; i < rounds; i++) {
-            key(password);
-            key(salt);
-        }
+        synchronized (LongSaltBCryptUtils.class) {
+            init_key();
+            ekskey(salt, password);
+            for (long i = 0; i < rounds; i++) {
+                key(password);
+                key(salt);
+            }
 
-        for (int i = 0; i < 64; i++) {
-            for (int j = 0; j < (clen >> 1); j++) {
-                encipher(cdata, j << 1);
+            for (int i = 0; i < 64; i++) {
+                for (int j = 0; j < (clen >> 1); j++) {
+                    encipher(cdata, j << 1);
+                }
             }
         }
 

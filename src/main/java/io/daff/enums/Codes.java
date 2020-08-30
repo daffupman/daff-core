@@ -98,16 +98,20 @@ public enum Codes {
      */
     SECURITY_CODE_NOT_MATCH(7000),
 
+    /**
+     * 文件上传错误
+     */
+    FILE_UPLOAD_ERROR(8000),
 
     /**
      * 未知错误
      */
-    UNKNOWN_ERROR(8000),
+    UNKNOWN_ERROR(9000),
 
     /**
      * 不支持的类型
      */
-    UNSUPPORTED_TYPE(8001),
+    UNSUPPORTED_TYPE(9001),
     ;
 
     private Integer value;

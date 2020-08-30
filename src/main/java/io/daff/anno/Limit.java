@@ -15,7 +15,7 @@ import java.lang.annotation.*;
  * @author daffupman
  * @since 2020/7/12
  */
-@Target({ElementType.FIELD})
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Constraint(validatedBy = LimitValidator.class)

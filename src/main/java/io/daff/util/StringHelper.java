@@ -1,5 +1,7 @@
 package io.daff.util;
 
+import java.util.UUID;
+
 /**
  * 字符串辅助类
  *
@@ -10,7 +12,6 @@ public class StringHelper {
 
     /**
      * 判断str是否是一个合法的数字
-     * @param str
      */
     public static boolean isInteger(String str) {
         try {
@@ -19,5 +20,17 @@ public class StringHelper {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    /**
+     * 生成指定长度的uuid
+     */
+    public static String uuid(int length) {
+        if (length > 0) {
+            return UUID.randomUUID().toString()
+                    .replaceAll("-", "")
+                    .substring(0, length);
+        }
+        return null;
     }
 }
