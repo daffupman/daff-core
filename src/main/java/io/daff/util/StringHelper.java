@@ -23,6 +23,13 @@ public class StringHelper {
     }
 
     /**
+     * 生成默认长度的uuid
+     */
+    public static String uuid() {
+        return uuid(32);
+    }
+
+    /**
      * 生成指定长度的uuid
      */
     public static String uuid(int length) {

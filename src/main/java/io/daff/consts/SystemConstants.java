@@ -11,7 +11,8 @@ public class SystemConstants {
     public static final String AUTHORIZATION = "authorization";
 
     public static final String TOKEN = "token";
-    public static final String ACCESS_TOKEN = "accessToken";
+    public static final String ACCESS_TOKEN = "access_token";
+    public static final String REFRESH_TOKEN = "refresh_token";
 
     public static final String CURRENT_LOGIN_USER = "currentLoginUser";
     public static final String LOGIN_USER_ID = "loginUserId";

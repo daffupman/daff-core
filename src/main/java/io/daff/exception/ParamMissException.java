@@ -13,7 +13,7 @@ public class ParamMissException extends BaseException {
     private static final long serialVersionUID = 2253678517658387828L;
 
     public ParamMissException(String message) {
-        super(Codes.PARAM_VALIDATE_ERROR, message);
+        super(Codes.PARAM_MISS_ERROR, message);
     }
     
 }

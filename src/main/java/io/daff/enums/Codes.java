@@ -74,6 +74,16 @@ public enum Codes {
     TOKEN_EXIST(5002),
 
     /**
+     * 缺少ticket
+     */
+    TICKET_MISS(5000),
+
+    /**
+     * ticket错误
+     */
+    TICKET_INVALID(5001),
+
+    /**
      * 重复提交
      */
     SUBMIT_AGAIN(5003),
