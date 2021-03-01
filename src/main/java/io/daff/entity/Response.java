@@ -33,22 +33,22 @@ public class Response<T> {
     /**
      * 本次操作的处理结果
      */
-    private Boolean ok;
+    private final Boolean ok;
 
     /**
      * 响应码，参考 {@link Codes}
      */
-    private Integer code;
+    private final Integer code;
 
     /**
      * 响应信息，参考 {@link Messages}
      */
-    private String msg;
+    private final String msg;
 
     /**
      * 响应数据
      */
-    private T data;
+    private final T data;
 
     public Response(Boolean ok, Integer code, String msg) {
         this(ok, code, msg, null);

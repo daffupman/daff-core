@@ -18,6 +18,8 @@ public class SystemConstants {
     public static final String LOGIN_USER_ID = "loginUserId";
     public static final String LOGIN_NICK_NAME = "loginNickName";
     public static final String LOGIN_REAL_NAME = "loginRealName";
+    public static final String LOGIN_BELONG_HIERARCHY_ID = "loginHierarchyId";
+    public static final String LOGIN_BELONG_ORG_HIERARCHY_ID = "loginOrgHierarchyId";
     public static final Object LOGIN_ERROR_MSG = "loginErrorMsg";
 
     public static final String LOGIN_ERROR_RESPONSE = "login_error_response";
