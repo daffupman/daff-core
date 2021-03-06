@@ -39,4 +39,8 @@ public class SystemConstants {
     public static final String AUTHORIZE_CODE_SCOPE_MAP_PREFIX = "authorize_code_scope_map:";
 
     public static final String DEFAULT_PASSWORD = "123456";
+
+    public static final String PAGE_NUM = "pageNum";
+    public static final String PAGE_SIZE = "pageSize";
+
 }

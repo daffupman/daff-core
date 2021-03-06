@@ -1,5 +1,7 @@
 package io.daff.util;
 
+import org.springframework.util.StringUtils;
+
 import java.util.UUID;
 
 /**
@@ -39,5 +41,22 @@ public class StringHelper {
                     .substring(0, length);
         }
         return null;
+    }
+
+    /**
+     * 字符转换成数字
+     */
+    public static int parseInt(String str) {
+        str = str.trim();
+        if (StringUtils.isEmpty(str)) {
+            return 0;
+        }
+        int parseInt;
+        try {
+            parseInt = Integer.parseInt(str);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+        return parseInt;
     }
 }
