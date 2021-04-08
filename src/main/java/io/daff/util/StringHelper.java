@@ -2,7 +2,8 @@ package io.daff.util;
 
 import org.springframework.util.StringUtils;
 
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * 字符串辅助类
@@ -10,7 +11,7 @@ import java.util.UUID;
  * @author daffupman
  * @since 2020/7/12
  */
-public class StringHelper {
+public class StringHelper extends org.apache.commons.codec.binary.StringUtils {
 
     /**
      * 判断str是否是一个合法的数字
@@ -44,7 +45,7 @@ public class StringHelper {
     }
 
     /**
-     * 字符转换成数字
+     * 尝试字符转换成Integer类型，转换失败则返回0
      */
     public static int parseInt(String str) {
         str = str.trim();
@@ -55,8 +56,61 @@ public class StringHelper {
         try {
             parseInt = Integer.parseInt(str);
         } catch (NumberFormatException e) {
+            e.printStackTrace();
             return 0;
         }
         return parseInt;
+    }
+
+    /**
+     * 尝试字符转换成Long类型，转换失败则返回0L
+     */
+    public static long parseLong(String str) {
+        str = str.trim();
+        if (StringUtils.isEmpty(str)) {
+            return 0;
+        }
+        long parseLong;
+        try {
+            parseLong = Long.parseLong(str);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            return 0L;
+        }
+        return parseLong;
+    }
+
+    public static List<Integer> parseIntegerList(String strs) {
+        strs = strs.trim();
+        if (StringUtils.isEmpty(strs)) {
+            return Collections.emptyList();
+        }
+        List<Integer> ints = new ArrayList<>();
+        try {
+            ints = Arrays.stream(strs.split(",")).map(each -> {
+                each = each.trim();
+                return StringUtils.isEmpty(each) ? null : Integer.parseInt(each);
+            }).filter(Objects::nonNull).collect(Collectors.toList());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ints;
+    }
+
+    public static List<Long> parseLongList(String strs) {
+        strs = strs.trim();
+        if (StringUtils.isEmpty(strs)) {
+            return Collections.emptyList();
+        }
+        List<Long> longs = new ArrayList<>();
+        try {
+            longs = Arrays.stream(strs.split(",")).map(each -> {
+                each = each.trim();
+                return StringUtils.isEmpty(each) ? null : Long.parseLong(each);
+            }).filter(Objects::nonNull).collect(Collectors.toList());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return longs;
     }
 }

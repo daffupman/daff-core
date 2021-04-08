@@ -124,7 +124,7 @@ public enum Codes {
     UNSUPPORTED_TYPE(9001),
     ;
 
-    private Integer value;
+    private final Integer value;
 
     Codes(Integer value) {
         this.value = value;
