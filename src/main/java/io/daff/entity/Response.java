@@ -1,7 +1,6 @@
 package io.daff.entity;
 
-import io.daff.enums.Codes;
-import io.daff.enums.Messages;
+import io.daff.enums.Hint;
 
 /**
  * 响应模型
@@ -36,12 +35,12 @@ public class Response<T> {
     private final Boolean ok;
 
     /**
-     * 响应码，参考 {@link Codes}
+     * 响应码，参考 {@link io.daff.enums.Hint}
      */
     private final Integer code;
 
     /**
-     * 响应信息，参考 {@link Messages}
+     * 响应信息，参考 {@link io.daff.enums.Hint}
      */
     private final String msg;
 
@@ -54,16 +53,16 @@ public class Response<T> {
         this(ok, code, msg, null);
     }
 
-    public Response(Boolean ok, Codes codes, String msg) {
-        this(ok, codes.value(), msg, null);
+    public Response(Boolean ok, Hint hint) {
+        this(ok, hint.code(), hint.msg(), null);
     }
 
-    public Response(Boolean ok, Codes codes, Messages msg) {
-        this(ok, codes.value(), msg.value(), null);
+    public Response(Boolean ok, Hint hint, String msg) {
+        this(ok, hint.code(), msg, null);
     }
 
-    public Response(Boolean ok, Codes codes, Messages msg, T data) {
-        this(ok, codes.value(), msg.value(), data);
+    public Response(Boolean ok, Hint hint,  T data) {
+        this(ok, hint.code(), hint.msg(), data);
     }
 
     public Response(Boolean ok, Integer code, String msg, T data) {
@@ -74,23 +73,23 @@ public class Response<T> {
     }
 
     public static <T> Response<T> ok() {
-        return new Response<>(Boolean.TRUE, Codes.SUCCESS, Messages.SUCCESS);
+        return new Response<>(Boolean.TRUE, Hint.SUCCESS);
     }
 
     public static <T> Response<T> ok(T data) {
-        return new Response<>(Boolean.TRUE, Codes.SUCCESS, Messages.SUCCESS, data);
+        return new Response<>(Boolean.TRUE, Hint.SUCCESS, data);
     }
 
     public static Response<Void> error() {
-        return new Response<>(Boolean.FALSE, Codes.SYSTEM_ERROR, Messages.SYSTEM_ERROR);
+        return new Response<>(Boolean.FALSE, Hint.SYSTEM_ERROR);
     }
 
-    public static Response<Void> error(Codes codes, Messages messages) {
-        return new Response<>(Boolean.FALSE, codes, messages);
+    public static Response<Void> error(Hint hint) {
+        return new Response<>(Boolean.FALSE, hint);
     }
 
-    public static Response<Void> error(Codes codes, String message) {
-        return new Response<>(Boolean.FALSE, codes, message);
+    public static Response<Void> error(Hint hint, String message) {
+        return new Response<>(Boolean.FALSE, hint.code(), message != null && !message.trim().equals("") ? message : hint.msg());
     }
 
     public Boolean getOk() {

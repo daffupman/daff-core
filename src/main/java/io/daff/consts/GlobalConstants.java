@@ -6,7 +6,7 @@ package io.daff.consts;
  * @author daffupman
  * @since 2020/7/12
  */
-public class SystemConstants {
+public class GlobalConstants {
 
     public static final String AUTHORIZATION = "authorization";
 

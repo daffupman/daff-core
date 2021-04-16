@@ -1,6 +1,6 @@
 package io.daff.exception;
 
-import io.daff.enums.Codes;
+import io.daff.enums.Hint;
 
 /**
  * 业务逻辑异常
@@ -11,6 +11,6 @@ import io.daff.enums.Codes;
 public class BusinessException extends BaseException {
 
     public BusinessException(String msg) {
-        super(Codes.BUSINESS_LOGIC_ERROR, msg);
+        super(Hint.BUSINESS_LOGIC_ERROR, msg);
     }
 }

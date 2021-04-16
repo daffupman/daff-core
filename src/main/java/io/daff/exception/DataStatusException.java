@@ -1,6 +1,6 @@
 package io.daff.exception;
 
-import io.daff.enums.Codes;
+import io.daff.enums.Hint;
 
 /**
  * 数据状态异常
@@ -13,10 +13,10 @@ public class DataStatusException extends BaseException {
     private static final long serialVersionUID = -1999015592879351947L;
 
     public DataStatusException() {
-        super(Codes.DATA_STATUS_ERROR, "数据状态异常");
+        super(Hint.DATA_STATUS_ERROR, "数据状态异常");
     }
 
     public DataStatusException(String message) {
-        super(Codes.DATA_STATUS_ERROR, message);
+        super(Hint.DATA_STATUS_ERROR, message);
     }
 }

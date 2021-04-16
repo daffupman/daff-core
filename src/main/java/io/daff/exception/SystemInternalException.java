@@ -1,7 +1,6 @@
 package io.daff.exception;
 
-import io.daff.enums.Codes;
-import io.daff.enums.Messages;
+import io.daff.enums.Hint;
 
 /**
  * 系统内部异常异常
@@ -12,6 +11,10 @@ import io.daff.enums.Messages;
 public class SystemInternalException extends BaseException {
 
     public SystemInternalException() {
-        super(Codes.SYSTEM_ERROR, Messages.SYSTEM_ERROR);
+        super(Hint.SYSTEM_ERROR);
+    }
+
+    public SystemInternalException(String message) {
+        super(Hint.SYSTEM_ERROR, message);
     }
 }

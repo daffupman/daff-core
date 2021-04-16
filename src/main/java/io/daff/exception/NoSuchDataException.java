@@ -1,7 +1,6 @@
 package io.daff.exception;
 
-import io.daff.enums.Codes;
-import io.daff.enums.Messages;
+import io.daff.enums.Hint;
 
 /**
  * 数据不存在异常
@@ -14,10 +13,10 @@ public class NoSuchDataException extends BaseException {
     private static final long serialVersionUID = -1999015592879351947L;
 
     public NoSuchDataException() {
-        super(Codes.DATA_NOT_FOUND, Messages.DATA_NOT_FOUND);
+        super(Hint.DATA_UNAVAILABLE);
     }
 
     public NoSuchDataException(String message) {
-        super(Codes.DATA_NOT_FOUND, message);
+        super(Hint.DATA_UNAVAILABLE, message);
     }
 }

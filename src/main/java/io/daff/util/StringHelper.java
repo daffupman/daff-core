@@ -2,7 +2,12 @@ package io.daff.util;
 
 import org.springframework.util.StringUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -11,7 +16,7 @@ import java.util.stream.Collectors;
  * @author daffupman
  * @since 2020/7/12
  */
-public class StringHelper extends org.apache.commons.codec.binary.StringUtils {
+public class StringHelper extends StringUtils {
 
     /**
      * 判断str是否是一个合法的数字
@@ -49,7 +54,7 @@ public class StringHelper extends org.apache.commons.codec.binary.StringUtils {
      */
     public static int parseInt(String str) {
         str = str.trim();
-        if (StringUtils.isEmpty(str)) {
+        if (isEmpty(str)) {
             return 0;
         }
         int parseInt;
@@ -67,7 +72,7 @@ public class StringHelper extends org.apache.commons.codec.binary.StringUtils {
      */
     public static long parseLong(String str) {
         str = str.trim();
-        if (StringUtils.isEmpty(str)) {
+        if (isEmpty(str)) {
             return 0;
         }
         long parseLong;
@@ -82,14 +87,14 @@ public class StringHelper extends org.apache.commons.codec.binary.StringUtils {
 
     public static List<Integer> parseIntegerList(String strs) {
         strs = strs.trim();
-        if (StringUtils.isEmpty(strs)) {
+        if (isEmpty(strs)) {
             return Collections.emptyList();
         }
         List<Integer> ints = new ArrayList<>();
         try {
             ints = Arrays.stream(strs.split(",")).map(each -> {
                 each = each.trim();
-                return StringUtils.isEmpty(each) ? null : Integer.parseInt(each);
+                return isEmpty(each) ? null : Integer.parseInt(each);
             }).filter(Objects::nonNull).collect(Collectors.toList());
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,14 +104,14 @@ public class StringHelper extends org.apache.commons.codec.binary.StringUtils {
 
     public static List<Long> parseLongList(String strs) {
         strs = strs.trim();
-        if (StringUtils.isEmpty(strs)) {
+        if (isEmpty(strs)) {
             return Collections.emptyList();
         }
         List<Long> longs = new ArrayList<>();
         try {
             longs = Arrays.stream(strs.split(",")).map(each -> {
                 each = each.trim();
-                return StringUtils.isEmpty(each) ? null : Long.parseLong(each);
+                return isEmpty(each) ? null : Long.parseLong(each);
             }).filter(Objects::nonNull).collect(Collectors.toList());
         } catch (Exception e) {
             e.printStackTrace();
