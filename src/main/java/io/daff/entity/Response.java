@@ -49,6 +49,13 @@ public class Response<T> {
      */
     private final T data;
 
+    public Response() {
+        this.ok = false;
+        this.code = 0;
+        this.msg = "";
+        this.data = null;
+    }
+
     public Response(Boolean ok, Integer code, String msg) {
         this(ok, code, msg, null);
     }
@@ -90,6 +97,10 @@ public class Response<T> {
 
     public static Response<Void> error(Hint hint, String message) {
         return new Response<>(Boolean.FALSE, hint.code(), message != null && !message.trim().equals("") ? message : hint.msg());
+    }
+
+    public static Response<Void> error(Integer code, String message) {
+        return new Response<>(Boolean.FALSE, code, message);
     }
 
     public Boolean getOk() {
