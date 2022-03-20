@@ -46,8 +46,8 @@ public class LimitValidator implements ConstraintValidator<Limit, String> {
             return allowValues.stream().anyMatch(each -> each.equals(value));
         } else if(Integer.class == clazz) {
             if (StringHelper.isInteger(value)) {
-                List<Integer> digits = allowValues.stream().map(Integer::new).collect(Collectors.toList());
-                return digits.contains(new Integer(value));
+                List<Integer> digits = allowValues.stream().map(Integer::valueOf).collect(Collectors.toList());
+                return digits.contains(Integer.valueOf(value));
             }
         }
         return false;
