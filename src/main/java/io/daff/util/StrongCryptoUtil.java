@@ -16,7 +16,7 @@ import java.security.SecureRandom;
  * @author daffupman
  * @since 2020/7/19
  */
-public class PasswordUtils {
+public class StrongCryptoUtil {
 
     /**
      * 加密

@@ -15,13 +15,13 @@ import java.lang.annotation.*;
  * @author daffupman
  * @since 2020/7/12
  */
-@Target({ElementType.FIELD})
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Constraint(validatedBy = LimitValidator.class)
 public @interface Limit {
 
-    String[] values() default {};
+    String[] value() default {};
     String message() default "输入的值不再范围内";
     Class<?> clazz() default String.class;
     Class<?>[] groups() default {};

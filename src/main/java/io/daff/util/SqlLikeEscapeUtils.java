@@ -10,7 +10,7 @@ import org.springframework.util.StringUtils;
  */
 public class SqlLikeEscapeUtils {
 
-    public String escapeSpecialChar(String str) {
+    public static String escapeSpecialChar(String str) {
         return StringUtils.isEmpty(str) ?
                 null :
                 str.replaceAll("\\\\", "\\\\\\\\")

@@ -32,7 +32,7 @@ public class LimitValidator implements ConstraintValidator<Limit, String> {
 
     public void initialize(Limit constraint) {
         // 把定义在注解的值赋值给values变量
-       final String[] values = constraint.values();
+       final String[] values = constraint.value();
        this.allowValues = values.length == 0 ? new ArrayList<>() : Arrays.asList(values);
        this.clazz = constraint.clazz();
     }
@@ -46,8 +46,8 @@ public class LimitValidator implements ConstraintValidator<Limit, String> {
             return allowValues.stream().anyMatch(each -> each.equals(value));
         } else if(Integer.class == clazz) {
             if (StringHelper.isInteger(value)) {
-                List<Integer> digits = allowValues.stream().map(Integer::new).collect(Collectors.toList());
-                return digits.contains(new Integer(value));
+                List<Integer> digits = allowValues.stream().map(Integer::valueOf).collect(Collectors.toList());
+                return digits.contains(Integer.valueOf(value));
             }
         }
         return false;
