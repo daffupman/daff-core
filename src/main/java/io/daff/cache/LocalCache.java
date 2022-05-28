@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
  * @param <P> 数据缓存的键
  * @param <R> 缓存的数据
  *
+ * @see Computable 对实现该接口的任务进行缓存
  * @author daff
  * @since 2022/3/20
  */
